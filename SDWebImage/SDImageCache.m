@@ -160,7 +160,7 @@ static natural_t get_free_memory(void)
         UIImage *image = SDWIReturnRetained([self imageFromKey:key fromDisk:YES]); // be thread safe with no lock
         if (image)
         {
-#if TARGET_OS_IPHONE
+#if (TARGET_OS_IPHONE || USE_CHAMELEON)
             [fileManager createFileAtPath:[self cachePathForKey:key] contents:UIImageJPEGRepresentation(image, (CGFloat)1.0) attributes:nil];
 #else
             NSArray*  representations  = [image representations];

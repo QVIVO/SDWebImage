@@ -9,7 +9,7 @@
 
 #import <TargetConditionals.h>
 
-#if !TARGET_OS_IPHONE
+#if (!TARGET_OS_IPHONE && !USE_CHAMELEON)
 #import <AppKit/AppKit.h>
 #ifndef UIImage
 #define UIImage NSImage
