@@ -8,7 +8,10 @@
 
 #import "SDWebImageDownloader.h"
 #import "SDWebImageDecoder.h"
+
+#if MAC_OS_X_VERSION_MAX_ALLOWED > MAC_OS_X_VERSION_10_7
 #import <ImageIO/ImageIO.h>
+#endif
 
 @interface SDWebImageDownloader (ImageDecoder) <SDWebImageDecoderDelegate>
 @end
